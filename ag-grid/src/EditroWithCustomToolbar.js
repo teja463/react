@@ -62,6 +62,7 @@ const CustomToolbar = (props) => (
       <button className="ql-list" value="bullet" />
       <button className="ql-indent" value="-1" />
       <button className="ql-indent" value="+1" />
+      <button className="ql-clean" />
     </span>
   </div>
 );
@@ -89,7 +90,9 @@ export default function Editor(props) {
         onChange={setValue}
         modules={modulesRef.current}
         theme={"snow"}
+        className='myeditor'
       />
+      <h2>Teja</h2>
       <button onClick={() => props.deleteEditor(props.eid)}>
         Delete Section
       </button>
