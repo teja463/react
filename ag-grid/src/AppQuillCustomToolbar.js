@@ -6,7 +6,7 @@ export default function AppQuill() {
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   const [list, setList] = useState([{ id: generateString() }]);
 
-  function generateString(length = 5) {
+  function generateString(length = 10) {
     let result = "_";
     const charactersLength = characters.length;
     for (let i = 0; i < length; i++) {

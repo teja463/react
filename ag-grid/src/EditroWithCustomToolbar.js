@@ -93,10 +93,10 @@ export default function Editor(props) {
         theme={"snow"}
         className='myeditor'
       />
-      <h2>Teja</h2>
       <button onClick={() => props.deleteEditor(props.eid)}>
         Delete Section
       </button>
+      <div className="ql-editor" dangerouslySetInnerHTML={{__html: value}}></div>
     </div>
   );
 }
