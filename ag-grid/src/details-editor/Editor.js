@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import ImageResize from "quill-image-resize-module-react";
+
+Quill.register("modules/imageResize", ImageResize);
 
 const UndoButton = () => (
   <svg
@@ -63,6 +66,7 @@ const CustomToolbar = (props) => (
       <button className="ql-list" value="bullet" />
       <button className="ql-indent" value="-1" />
       <button className="ql-indent" value="+1" />
+      <button className="ql-image" />
       <button className="ql-clean" />
     </span>
   </div>
@@ -79,6 +83,10 @@ export default function Editor(props) {
     },
     clipboard: {
       matchVisual: false,
+    },
+    imageResize: {
+      parchment: Quill.import("parchment"),
+      modules: ["Resize", "DisplaySize"],
     },
   });
 
