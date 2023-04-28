@@ -58,6 +58,7 @@ const CustomToolbar = (props) => (
       <button className="ql-underline" />
       <button className="ql-strike" />
       <button className="ql-code-block" />
+      <button className="ql-link" />
       <button className="ql-list" value="ordered" />
       <button className="ql-list" value="bullet" />
       <button className="ql-indent" value="-1" />
