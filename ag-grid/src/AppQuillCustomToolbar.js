@@ -28,6 +28,7 @@ export default function AppQuill() {
 
   return (
     <div className="App">
+      <h2>Custom toolbar</h2>
       <button onClick={addEditor}>Add</button>
       {list.map((m) => (
         <div key={m.id}>

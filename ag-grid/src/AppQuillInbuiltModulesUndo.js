@@ -28,6 +28,7 @@ export default function AppQuill() {
 
   return (
     <div className="App">
+      <h2>Inbuilt Modules With Undo</h2>
       <button onClick={addEditor}>Add</button>
       <button onClick={addEditor}>Add2adsf</button>
       {list.map((m) => (

@@ -17,11 +17,6 @@ export default function Editor(props) {
   function imageHandler() {
     this.quill.history.undo();
   }
-
-  /*   const imageHandler = useCallback(() => {
-    quill.history.undo();
-  }, []) */
-
   const modules = useMemo(
     () => ({
       toolbar: {
