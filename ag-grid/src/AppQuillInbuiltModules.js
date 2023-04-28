@@ -7,7 +7,7 @@ export default function AppQuill() {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   const [list, setList] = useState([{ id: generateString() }]);
-
+  const [sample, setSample] = useState();
   function generateString(length = 5) {
     let result = "_";
     const charactersLength = characters.length;
@@ -34,7 +34,8 @@ export default function AppQuill() {
       <button onClick={addEditor}>Add</button>
       {list.map((m) => (
         <div key={m.id}>
-          <Editor eid={m.id} deleteEditor={deleteEditor}/>
+          <input type="text" value={sample} onChange={e => setSample(e.target.value)} />
+          <Editor eid={m.id} deleteEditor={deleteEditor} sample={sample}/>
         </div>
       ))}
     </div>

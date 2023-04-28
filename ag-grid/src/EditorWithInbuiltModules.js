@@ -6,23 +6,13 @@ export default function Editor(props) {
   const [value, setValue] = useState();
 
   const toolbarOptions = [
-    ["bold", "italic", "underline", "strike"], // toggled buttons
-    ["blockquote", "code-block"],
-
-    // [{ header: 1 }, { header: 2 }], // custom button values
-    [{ list: "ordered" }, { list: "bullet" }],
-    // [{ script: "sub" }, { script: "super" }], // superscript/subscript
-    [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
-    // [{ direction: "rtl" }], // text direction
-
-    // [{ size: ["small", false, "large", "huge"] }], // custom dropdown
-    [{ header: [1, 2, 3, 4, 5, 6, false] }],
-
-    [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-    // [{ font: [] }],
+    // ["undo", "redo"],
+    [{ header: [] }],
     [{ align: [] }],
-
-    ["clean"], // remove formatting button
+    [{ color: [] }, { background: [] }],
+    ["bold", "italic", "underline", "strike", "code-block"],
+    [{ list: "ordered" }, { list: "bullet" }],
+    [{ indent: "-1" }, { indent: "+1" }],
   ];
 
   const modules = {
@@ -40,6 +30,7 @@ export default function Editor(props) {
         preserveWhitespace
       />
       <button onClick={() => props.deleteEditor(props.eid)}>Delete</button>
+      <h2>{props.sample}</h2>
       <div
         className="ql-editor"
         dangerouslySetInnerHTML={{ __html: value }}
