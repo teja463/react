@@ -52,7 +52,7 @@ const CustomToolbar = (props) => (
       <button className="ql-redoChange">
         <RedoButton />
       </button>
-      <select className="ql-header" />
+      <select className="ql-size" />
       <select className="ql-align" />
       <select className="ql-color" />
       <select className="ql-background" />
@@ -100,6 +100,7 @@ export default function Editor(props) {
         theme={"snow"}
         className="faqeditor"
       />
+      <button onClick={() => props.deleteEditor(props.eid)}>Delete</button>
     </div>
   );
 }

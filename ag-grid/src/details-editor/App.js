@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import DetailsEditor from "./DetailsEditor";
 
 export default function App() {
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   const [list, setList] = useState([{ id: generateString() }]);
 
   function generateString(length = 10) {
@@ -32,7 +31,7 @@ export default function App() {
       <button onClick={addEditor}>Add</button>
       {list.map((m) => (
         <div key={m.id}>
-          <DetailsEditor eid={m.id} />
+          <DetailsEditor eid={m.id} deleteEditor={deleteEditor}/>
         </div>
       ))}
     </div>
