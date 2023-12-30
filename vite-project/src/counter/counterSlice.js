@@ -18,8 +18,6 @@ const counterSlice = createSlice({
         }
     }
 })
-console.log(counterSlice)
-console.log(counterSlice.actions.increment())
 
 export function incrementByValueAsync(value){
     return dispatch => {
@@ -29,5 +27,6 @@ export function incrementByValueAsync(value){
     }
 }
 
+export const counterSelector = state => state.counter;
 export const {increment, decrement, incrementByValue} = counterSlice.actions;
 export default counterSlice.reducer;

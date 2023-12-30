@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement, incrementByValue, incrementByValueAsync } from "./counterSlice";
+import { increment, decrement, incrementByValue, incrementByValueAsync, counterSelector } from "./counterSlice";
 export default function Counter() {
-  const count = useSelector((state) => state.counter);
+  const count = useSelector(counterSelector);
   const dispatch = useDispatch();
   const [userInput, setUserInput] = useState(0);
   return (
