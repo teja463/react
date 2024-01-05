@@ -7,20 +7,20 @@ export default function Counter() {
   const [userInput, setUserInput] = useState(0);
   return (
     <>
-      <div className="card">
+      <div>
         <h2>Count is {count}</h2>
-        <button onClick={() => dispatch(decrement())}>-</button>
-        <button onClick={() => dispatch(increment())}>+</button>
+        <button className="btn btn-dark" onClick={() => dispatch(decrement())}>-</button>
+        <button className="btn btn-primary" onClick={() => dispatch(increment())}>+</button>
       </div>
       <div>
         <input
-          style={{'width': '30px'}}
+          style={{'width': '50px'}}
           type="number"
           value={userInput}
           onChange={(e) => setUserInput(+e.target.value)}
         />
-        <button onClick={() => dispatch(incrementByValue(userInput))}>Increment by Value</button>
-        <button onClick={() => dispatch(incrementByValueAsync(userInput))}>Increment by Value Async</button>
+        <button className="btn btn-danger" onClick={() => dispatch(incrementByValue(userInput))}>Increment by Value</button>
+        <button className="btn btn-warning" onClick={() => dispatch(incrementByValueAsync(userInput))}>Increment by Value Async</button>
       </div>
     </>
   );

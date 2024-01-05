@@ -15,7 +15,7 @@ export default function Posts() {
   return (
     <>
       <h2>Posts</h2>
-      <h4>Status: {status}</h4>
+      <h4>Status: <span className="text-uppercase">{status}</span></h4>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>{post.title}</li>
