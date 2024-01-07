@@ -1,6 +1,6 @@
 import Counter from './counter/Counter'
 import Posts from './posts/Posts'
-import BootstrapExample from './BootstrapExample';
+import BootstrapExample from './bootstrap-demo/BootstrapExample';
 
 function App() {
 
