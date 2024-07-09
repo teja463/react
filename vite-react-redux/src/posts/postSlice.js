@@ -45,7 +45,7 @@ export function getPostsApi() {
 }
 
 export const fetchPosts = createAsyncThunk(
-  "pots/getPostsAsyncThunk",
+  "post/getPostsAsyncThunk",
   async () => {
     const response = await axios.get(
       "https://jsonplaceholder.typicode.com/posts"
