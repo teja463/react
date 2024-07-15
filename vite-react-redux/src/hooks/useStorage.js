@@ -1,17 +1,17 @@
 import {useState, useEffect} from 'react';
 import useLogger from './useLogger';
 
-function getSavedValue(key, intialValue){
+function getSavedValue(key, initialValue){
     const saved = JSON.parse(localStorage.getItem(key));
     if(!saved){
-        return intialValue;
+        return initialValue;
     }
     return saved;
 }
 
-export default function useStorage(key, intialValue=''){
+export default function useStorage(key, initialValue=''){
 
-    const [name, setName] = useState(getSavedValue(key, intialValue));
+    const [name, setName] = useState(getSavedValue(key, initialValue));
     useLogger(name);
     useEffect(() => {
         localStorage.setItem(key, JSON.stringify(name));
