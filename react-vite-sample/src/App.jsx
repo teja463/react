@@ -2,13 +2,17 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import C from './constants'
 
 function App() {
   const [count, setCount] = useState(0);
-
+  console.log(import.meta.env);
+  console.log(import.meta.env.VITE_NAME);
   return (
     <>
       <div>
+        <h3>{C.APP_BASE_URL}</h3>
+        <h4>{JSON.stringify(import.meta.env)}</h4>
         <p className="text-3xl font-bold underline">Teja!</p>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
