@@ -11,8 +11,10 @@ function App() {
   return (
     <>
       <div>
-        <h3>{C.APP_BASE_URL}</h3>
-        <h4>{JSON.stringify(import.meta.env)}</h4>
+        <div className="text-2xl bg-red-200 p-5 break-words">
+          <h3>{C.APP_BASE_URL}</h3>
+          <h4>{JSON.stringify(import.meta.env)}</h4>
+        </div>
         <p className="text-3xl font-bold underline">Teja!</p>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
