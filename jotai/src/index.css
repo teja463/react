@@ -1,5 +1,10 @@
 body{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#root{
+  max-width: 1280px;
+  margin: auto;
 }
 
 .components > div{
@@ -13,3 +18,4 @@ body{
   gap: 8px;
   flex-wrap: wrap;
 }
+
