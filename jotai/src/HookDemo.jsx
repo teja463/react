@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function useTimer() {
   const [time, setTime] = useState(new Date());
-  console.log("hook render");
+  // console.log("hook render");
 
    useEffect(() => {
     const intervalId = setInterval(() => {
@@ -12,12 +12,12 @@ function useTimer() {
       clearInterval(intervalId);
     }
   }, [])
-  return time.toISOString();
+  return time.toLocaleString();
 }
 
 export default function HookDemo() {
   const time = useTimer();
-  console.log("component render");
+  // console.log("component render");
   const [count, setCount] = useState(0);
 
   return (
