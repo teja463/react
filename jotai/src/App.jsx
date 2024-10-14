@@ -2,6 +2,7 @@ import Counter from "./Counter";
 import Demo1 from "./Demo1";
 import Drawing from "./Drawing";
 import Login from "./Login";
+import HookDemo from "./HookDemo";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Login />
       <Counter />
       <Drawing />
+      <HookDemo />
     </div>
   );
 }

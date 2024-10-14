@@ -1,7 +1,9 @@
 import { atom, useAtom } from "jotai";
-
+import { useRenderCount } from "./hoooks/useRenderCount";
 const dotsAtom = atom([]);
 const dotsLengthAtom = atom((get) => get(dotsAtom).length);
+
+
 
 export default function Drawing() {
   return (
@@ -25,7 +27,7 @@ function SvgDots() {
 
 function SvgRoot() {
   const [, setDots] = useAtom(dotsAtom);
-
+  const renderCount = useRenderCount();
   return (
     <svg
       width="200"
@@ -42,6 +44,7 @@ function SvgRoot() {
     >
       <rect width={"200"} height={"200"} fill="#eee" />
       <SvgDots />
+      <text x="5" y="12" fontSize={'14px'}>Rendered {renderCount} times</text>
     </svg>
   );
 }
