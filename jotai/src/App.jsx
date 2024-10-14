@@ -5,6 +5,8 @@ import Login from "./Login";
 import HookDemo from "./HookDemo";
 import DrawingWithoutRerender from "./DrawingWithoutRerender";
 import DrawingWithMouseDown from "./DrawingWithMouseDown";
+import DrawingShape from "./DrawingShape";
+import DrawingShapes from "./DrawingShapes";
 function App() {
   return (
     <div className="components">
@@ -15,6 +17,8 @@ function App() {
         <Drawing />
         <DrawingWithoutRerender />
         <DrawingWithMouseDown />
+        <DrawingShape />
+        <DrawingShapes />
       </div>
       {/* <HookDemo /> */}
     </div>
