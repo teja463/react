@@ -12,7 +12,7 @@ export default function Login() {
     <div>
       {isAuthenticated ? (
         <div>
-          <button onClick={handleLogout}>Logout</button>
+          <span>Hi Welcome!!! </span><button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <LoginForm />

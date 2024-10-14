@@ -11,8 +11,8 @@ export const isAuthenticatedAtom = atom((get) => {
   return loggedIn;
 });
 
-export const loginAtom = atom(null, (get,set,val) => {
-    set(userAtom, {userName:val})
+export const loginAtom = atom(null, (get,set,by) => {
+    set(userAtom, {userName:by})
 })
 
 export const logoutAtom = atom(null, (get,set) => {
