@@ -99,7 +99,6 @@ function SvgShape({shapeAtom}) {
 
 function SvgShapes(){
   const [shapes] = useAtom(shapesAtom);
-  console.log('shapes', shapes);
   return (
     <g>
       {shapes.map(shape => <SvgShape key={`${shape}`} shapeAtom={shape} />)}
