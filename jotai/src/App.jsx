@@ -1,12 +1,11 @@
-import Counter from "./Counter";
-import Demo1 from "./Demo1";
-import Drawing from "./Drawing";
-import Login from "./Login";
-import HookDemo from "./HookDemo";
-import DrawingWithoutRerender from "./DrawingWithoutRerender";
-import DrawingWithMouseDown from "./DrawingWithMouseDown";
-import DrawingShape from "./DrawingShape";
-import DrawingShapes from "./DrawingShapes";
+import Counter from "./jotai/Counter";
+import Demo1 from "./jotai/Demo1";
+import Drawing from "./jotai/Drawing";
+import Login from "./jotai/Login";
+import DrawingWithoutRerender from "./jotai/DrawingWithoutRerender";
+import DrawingWithMouseDown from "./jotai/DrawingWithMouseDown";
+import DrawingShape from "./jotai/DrawingShape";
+import DrawingShapes from "./jotai/DrawingShapes";
 import MultiselectDropdown from "./MultiselectDropdown";
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
         <DrawingShapes />
       </div>
       <MultiselectDropdown />
-      {/* <HookDemo /> */}
     </div>
   );
 }

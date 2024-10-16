@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAtom } from "jotai";
-import { loginAtom } from "./store/userAtoms";
+import { loginAtom } from "../store/userAtoms";
 
 export default function LoginForm() {
   const [userName, setUsername] = useState();

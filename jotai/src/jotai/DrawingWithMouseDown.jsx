@@ -1,5 +1,5 @@
 import { atom, useAtom } from "jotai";
-import { useRenderCount } from "./hoooks/useRenderCount";
+import { useRenderCount } from "../hooks/useRenderCount";
 
 const dotsAtom = atom([]);
 const dotsLengthAtom = atom((get) => get(dotsAtom).length);

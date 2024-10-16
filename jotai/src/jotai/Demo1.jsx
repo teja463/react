@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import {themeAtom, buttonColorAtom} from './store/themeAtoms';
+import {themeAtom, buttonColorAtom} from '../store/themeAtoms';
 
 export default function Demo1() {
   const [theme, setTheme] = useAtom(themeAtom);

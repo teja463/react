@@ -1,8 +1,11 @@
 import { atom, useAtom } from "jotai";
-import { useRenderCount } from "./hoooks/useRenderCount";
+import { useRenderCount } from "../hooks/useRenderCount";
 
 const dotsAtom = atom([]);
 const dotsLengthAtom = atom((get) => get(dotsAtom).length);
+const writeDotsAtom = atom(null, (get, set, by) => {
+  set(dotsAtom, prev => [...prev, by]);
+})
 
 export default function Drawing() {
   return (
@@ -25,7 +28,7 @@ function SvgDots() {
 }
 
 function SvgRoot() {
-  const [, setDots] = useAtom(dotsAtom);
+  const [, saveDots] = useAtom(writeDotsAtom);
   const renderCount = useRenderCount();
   return (
     <svg
@@ -38,15 +41,12 @@ function SvgRoot() {
         var rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        // setDots((prev) => [...prev, [x, y]]);
-        setDots((prev) => [...prev, [x, y]]);
+        saveDots([x, y]);
       }}
     >
       <rect width={"200"} height={"200"} fill="#eee" />
       <SvgDots />
-      <text x="5" y="12" fontSize={"14px"}>
-        Rendered {renderCount} times
-      </text>
+      <text x="5" y="12" fontSize={'14px'}>Rendered {renderCount} times</text>
     </svg>
   );
 }

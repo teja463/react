@@ -1,6 +1,6 @@
 import { useAtom } from "jotai";
 import LoginForm from "./LoginForm";
-import { isAuthenticatedAtom, logoutAtom } from "./store/userAtoms";
+import { isAuthenticatedAtom, logoutAtom } from "../store/userAtoms";
 
 export default function Login() {
   const [isAuthenticated] = useAtom(isAuthenticatedAtom);
