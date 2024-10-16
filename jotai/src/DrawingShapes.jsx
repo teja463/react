@@ -1,4 +1,4 @@
-import { atom, useAtom } from "jotai";
+import { atom, useAtom, useSetAtom, useAtomValue } from "jotai";
 
 const dotsAtom = atom([]);
 const writeDotsAtom = atom(null, (get, set, by) => {
@@ -58,9 +58,9 @@ function SvgDots() {
 }
 
 function SvgRoot() {
-  const [, writeDots] = useAtom(writeDotsAtom);
-  const [, setDraw] = useAtom(writeDrawingAtom);
-  const [, addShape] = useAtom(addShapesAtom);
+  const writeDots = useSetAtom(writeDotsAtom);
+  const setDraw = useSetAtom(writeDrawingAtom);
+  const addShape = useSetAtom(addShapesAtom);
 
   return (
     <svg

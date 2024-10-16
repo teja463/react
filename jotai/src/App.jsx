@@ -7,6 +7,8 @@ import DrawingWithoutRerender from "./DrawingWithoutRerender";
 import DrawingWithMouseDown from "./DrawingWithMouseDown";
 import DrawingShape from "./DrawingShape";
 import DrawingShapes from "./DrawingShapes";
+import MultiselectDropdown from "./MultiselectDropdown";
+
 function App() {
   return (
     <div className="components">
@@ -20,6 +22,7 @@ function App() {
         <DrawingShape />
         <DrawingShapes />
       </div>
+      <MultiselectDropdown />
       {/* <HookDemo /> */}
     </div>
   );

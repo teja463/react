@@ -12,8 +12,10 @@
   "dependencies": {
     "jotai": "^2.10.0",
     "jotai-devtools": "^0.10.1",
+    "jotai-optics": "^0.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "multiselect-react-dropdown": "^2.0.25"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
