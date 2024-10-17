@@ -13,11 +13,13 @@
     "jotai": "^2.10.0",
     "jotai-devtools": "^0.10.1",
     "jotai-optics": "^0.4.0",
+    "multiselect-react-dropdown": "^2.0.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "multiselect-react-dropdown": "^2.0.25"
+    "react-hook-form": "^7.53.0"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",

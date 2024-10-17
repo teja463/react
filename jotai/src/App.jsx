@@ -7,6 +7,7 @@ import DrawingWithMouseDown from "./jotai/DrawingWithMouseDown";
 import DrawingShape from "./jotai/DrawingShape";
 import DrawingShapes from "./jotai/DrawingShapes";
 import MultiselectDropdown from "./MultiselectDropdown";
+import YoutubeForm from "./reacthookform/YoutubeForm";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <DrawingShapes />
       </div>
       <MultiselectDropdown />
+      <YoutubeForm />
     </div>
   );
 }

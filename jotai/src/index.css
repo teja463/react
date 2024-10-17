@@ -19,3 +19,13 @@ body{
   flex-wrap: wrap;
 }
 
+
+.form *{
+  display: block;
+  margin: 2px;
+}
+
+.error{
+  color: red;
+  font-size: 14px;
+}
