@@ -1,14 +1,16 @@
-import { useForm } from "react-hook-form";
+import { useForm, useFieldArray } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
 export default function YoutubeForm() {
   const form = useForm({
     defaultValues: {
       email: "test@test.com",
+      phNums: [{ number: "" }],
     },
   });
 
   const { register, control, handleSubmit, formState } = form;
+  const { fields, append, remove } = useFieldArray({ name: "phNums", control });
   const { errors } = formState;
 
   function onSubmit(formData) {
@@ -17,6 +19,7 @@ export default function YoutubeForm() {
 
   return (
     <div>
+      <h2>Youtube Form</h2>
       <form onSubmit={handleSubmit(onSubmit)} noValidate className="form">
         <label htmlFor="username">Username</label>
         <input
@@ -74,7 +77,20 @@ export default function YoutubeForm() {
         <input type="text" id="primary-phone" {...register("phones.0")} />
         <label htmlFor="secondary-phone">Secondary Phone</label>
         <input type="text" id="secondary-phone" {...register("phones.1")} />
-        
+
+        <p>List of Extra Phone numbers</p>
+        {fields.map((field, index) => {
+          return (
+            <div key={field.id}>
+              <input
+                type="text"
+                {...register(`phNums.${index}.number`)}
+              />
+              {index > 0 && <button type="button" onClick={() => remove(index)}>Remove</button>}
+            </div>
+          );
+        })}
+        <button onClick={() => append({number:''})}>Add Extra Phone</button>
         <button>Submit</button>
       </form>
       <DevTool control={control} />

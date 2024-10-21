@@ -8,6 +8,7 @@ import DrawingShape from "./jotai/DrawingShape";
 import DrawingShapes from "./jotai/DrawingShapes";
 import MultiselectDropdown from "./MultiselectDropdown";
 import YoutubeForm from "./reacthookform/YoutubeForm";
+import StudentForm from "./reacthookform/StudentForm";
 
 function App() {
   return (
@@ -23,7 +24,10 @@ function App() {
         <DrawingShapes />
       </div>
       <MultiselectDropdown />
-      <YoutubeForm />
+      <div style={{display: 'flex', justifyContent: 'space-around'}}>
+        <YoutubeForm />
+        <StudentForm />
+      </div>
     </div>
   );
 }
