@@ -8,6 +8,7 @@ export default function YoutubeForm() {
       email: "test@test.com",
       phNums: [{ number: "" }],
     },
+    // mode: "onSubmit",
   });
 
   const {
@@ -18,12 +19,21 @@ export default function YoutubeForm() {
     watch,
     getValues,
     setValue,
+    reset,
+    trigger,
   } = form;
 
   const { fields, append, remove } = useFieldArray({ name: "phNums", control });
-  const { errors, touchedFields, dirtyFields, isDirty, isValid } = formState;
-  console.log({touchedFields, dirtyFields, isDirty, isValid});
-  
+  const {
+    errors,
+    touchedFields,
+    dirtyFields,
+    isDirty,
+    isValid,
+    isSubmitSuccessful,
+  } = formState;
+  console.log({ touchedFields, dirtyFields, isDirty, isValid });
+
   useEffect(() => {
     const subscription = watch((formData) => {
       console.log("watch", formData);
@@ -45,14 +55,24 @@ export default function YoutubeForm() {
     console.log(formData.dob.toLocaleString());
   }
 
-  function onError(errors){
-    console.log('errors', errors);
+  function onError(errors) {
+    console.log("errors", errors);
   }
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <div>
       <h2>Youtube Form</h2>
-      <form onSubmit={handleSubmit(onSubmit, onError)} noValidate className="form">
+      <form
+        onSubmit={handleSubmit(onSubmit, onError)}
+        noValidate
+        className="form"
+      >
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -163,13 +183,17 @@ export default function YoutubeForm() {
           })}
         />
 
-        <button disabled={!isDirty || !isValid}>Submit</button>
-        <button type="button" onClick={handleGetValues}>
-          Get Values
-        </button>
-        <button type="button" onClick={handleSetValue}>
-          Set Value
-        </button>
+        <div style={{ display: "flex" }}>
+          <button disabled={!isDirty || !isValid}>Submit</button>
+          <button onClick={() => reset()}>Reset Form</button>
+          <button onClick={() => trigger()}>Validate</button>
+          <button type="button" onClick={handleGetValues}>
+            Get Values
+          </button>
+          <button type="button" onClick={handleSetValue}>
+            Set Value
+          </button>
+        </div>
       </form>
       <DevTool control={control} />
     </div>
