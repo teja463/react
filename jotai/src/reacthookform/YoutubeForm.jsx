@@ -6,7 +6,9 @@ export default function YoutubeForm() {
   const form = useForm({
     defaultValues: {
       email: "test@test.com",
+      channel: "Test channel",
       phNums: [{ number: "" }],
+      gender: "Female"
     },
     // mode: "onSubmit",
   });
@@ -32,6 +34,7 @@ export default function YoutubeForm() {
     isValid,
     isSubmitSuccessful,
   } = formState;
+
   console.log({ touchedFields, dirtyFields, isDirty, isValid });
 
   useEffect(() => {
@@ -182,6 +185,11 @@ export default function YoutubeForm() {
             },
           })}
         />
+        <label for="gender-male" >Male</label>
+        <input type="radio" id="gender-male" name="gender" value="Male" {...register("gender")}/>
+
+        <label for="gender-female">Female </label>
+        <input type="radio" id="gender-female" name="gender" value="Female" {...register("gender")}/>
 
         <div style={{ display: "flex" }}>
           <button disabled={!isDirty || !isValid}>Submit</button>
