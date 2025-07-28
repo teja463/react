@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-        <Button onClick={() => console.log('click')}>Click me</Button>
+        <Button >Click me</Button>
         <Button variant={"destructive"} size="sm">Click me</Button>
         <Button variant={"outline"} size="lg">Click me</Button>
         <Button variant={"secondary"} size="icon">I</Button>
