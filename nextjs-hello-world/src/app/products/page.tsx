@@ -5,7 +5,13 @@ export const metadata: Metadata = {
   title: "Products"
 }
 
-export default function Products() {
+
+export default async function Products() {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('done')
+    }, 2000)
+  })
   return (
     <>
       <h2 className="text-3xl mb-4">Products</h2>
