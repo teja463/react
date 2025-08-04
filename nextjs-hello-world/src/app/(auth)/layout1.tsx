@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -17,14 +17,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="bg-indigo-500 p-4 text-center flex justify-center gap-10">
-          <Link className={linkClasses} href="/products">Products</Link>
-          <Link className={linkClasses} href="/profile">Profile</Link>
-          <Link className={linkClasses} href="/blog">Blog</Link>
-          <Link className={linkClasses} href="/mydocs">Docs</Link>
-          <Link className={linkClasses} href="/mydocs/test/232">Docs Inner</Link>
-          <Link className={linkClasses} href="/about">About</Link>
-          <Link className={linkClasses} href="/login">Login</Link>
+        <header className="bg-sky-500 p-4 text-center flex justify-center gap-10">
+          <Link className={linkClasses} href="/">
+            Home
+          </Link>
+          <Link className={linkClasses} href="/register">
+            Register
+          </Link>
+          <Link className={linkClasses} href="/forgot-password">
+            Forgot Password
+          </Link>
+          <Link className={linkClasses} href="/login">
+            Login
+          </Link>
         </header>
         <main className="mx-4 p-2">{children}</main>
         <footer className="bg-gray-200 p-4 absolute bottom-0 w-full text-center">
