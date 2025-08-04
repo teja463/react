@@ -13,11 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const linkClasses =
-    "text-white font-bold uppercase tracking-widest text-[20px]";
+    "text-white font-bold uppercase tracking-wide ";
   return (
     <html lang="en">
       <body>
-        <header className="bg-indigo-500 p-4 text-center flex justify-center gap-10">
+        <header className="bg-indigo-500 p-4 text-center flex justify-center gap-8">
           <Link className={linkClasses} href="/products">
             Products
           </Link>
@@ -26,6 +26,12 @@ export default function RootLayout({
           </Link>
           <Link className={linkClasses} href="/mydocs">
             Docs
+          </Link>
+          <Link className={linkClasses} href="/counter">
+            Counter
+          </Link>
+          <Link className={linkClasses} href="/error-demo">
+            Error Demo
           </Link>
           <Link className={linkClasses} href="/login">
             Login
