@@ -17,9 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="bg-indigo-500 p-4 text-center flex justify-center gap-8">
+        <header className="bg-slate-500 p-4 text-center flex justify-center gap-8">
           <Link className={linkClasses} href="/products">
             Products
+          </Link>
+          <Link className={linkClasses} href="/parallel-routes">
+            Parallel Routes
           </Link>
           <Link className={linkClasses} href="/blog">
             Blog
