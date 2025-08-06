@@ -21,6 +21,9 @@ export default function RootLayout({
           <Link className={linkClasses} href="/products">
             Products
           </Link>
+           <Link className={linkClasses} href="/image-gallery">
+            Image Gallery Intercept
+          </Link>
           <Link className={linkClasses} href="/parallel-routes">
             Parallel Routes
           </Link>
