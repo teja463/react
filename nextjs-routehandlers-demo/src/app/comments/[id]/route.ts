@@ -1,6 +1,6 @@
 import { Comments } from "../data"
 
-export async function GET(request: Request, { params }) {
+export async function GET(request: Request, { params } : any) {
   const { id } = await params;
   const comment = Comments.find(c => c.id == id);
   if (comment) {
@@ -11,7 +11,7 @@ export async function GET(request: Request, { params }) {
   }
 }
 
-export async function PATCH(request: Request, { params }) {
+export async function PATCH(request: Request, { params } : any) {
   const { id } = await params;
   const body = await request.json();
   const comment = Comments.find(c => c.id == id);
@@ -25,7 +25,7 @@ export async function PATCH(request: Request, { params }) {
   }
 }
 
-export async function DELETE(request: Request, { params }) {
+export async function DELETE(request: Request, { params }: any) {
   const { id } = await params;
   const index = Comments.findIndex(c => c.id == id);
   if(index === -1){
