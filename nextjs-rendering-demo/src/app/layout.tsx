@@ -17,8 +17,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header>
-          <Link href="/about">About</Link>
-          <Link href="/dashboard">Dashboard</Link>
+          <Link href="/dashboard">Dashboard (Static)</Link>
+          <Link href="/about">About (Dynamic)</Link>
+          <Link href="/products">Products (SSG)</Link>
+          <Link href="/product-reviews">Review Product (Streaming)</Link>
         </header>
         {children}
       </body>
