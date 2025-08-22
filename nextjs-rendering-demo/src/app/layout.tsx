@@ -21,6 +21,7 @@ export default function RootLayout({
           <Link href="/about">About (Dynamic)</Link>
           <Link href="/products">Products (SSG)</Link>
           <Link href="/product-reviews">Review Product (Streaming)</Link>
+          <Link href="/interleaving">Interleaving</Link>
           <Link href="/client-route">Client Route</Link>
           <Link href="/server-route">Server Route</Link>
         </header>
